@@ -1,14 +1,8 @@
-# script: comparar_fluxos.py
-# Requisitos: pip install pandas pingouin
-
 from pathlib import Path
 import sys
 import pandas as pd
 import pingouin as pg
 
-
-
-# Pasta onde estão os CSVs (por padrão: mesma pasta do script)
 BASE_DIR = Path(__file__).parent
 
 EXPECTED_SCREENS = 5
@@ -36,7 +30,6 @@ def read_and_aggregate(flow_prefix: str) -> pd.Series:
         sys.exit(1)
 
     full = full[COLUMNS_TO_KEEP].copy()
-    # Garantir tipo numérico e remover NaNs
     full['Total duration (seconds)'] = pd.to_numeric(full['Total duration (seconds)'], errors='coerce')
     full = full.dropna(subset=['Tester ID', 'Total duration (seconds)'])
 
@@ -47,35 +40,29 @@ def main():
     a_series = read_and_aggregate("testeA")
     b_series = read_and_aggregate("testeB")
 
-    # Estatísticas descritivas (por usuário)
     print("Estatísticas - Fluxo A (duração total por usuário):")
     print(a_series.describe().to_string())
     print("\nEstatísticas - Fluxo B (duração total por usuário):")
     print(b_series.describe().to_string())
 
-    # Preparar arrays para o teste (amostras independentes)
     a_vals = a_series.values
     b_vals = b_series.values
 
-    # Teste t bilateral (não assume qual é 'melhor' — apenas compara)
     res = pg.ttest(a_vals, b_vals, paired=False, alternative='two-sided')
     if res.empty:
         print("Erro: resultado do teste t está vazio. Verifique os dados de entrada e se há valores válidos nas amostras.")
         print(res)
         sys.exit(1)
 
-    # usar iloc para obter a primeira linha independentemente do índice
     t_stat = res.iloc[0]['T']
     p_val = res.iloc[0]['p-val']
 
-    # Tamanho de efeito (Cohen's d) - proteger contra possíveis erros
     try:
         cohens_d = pg.compute_effsize(a_vals, b_vals, paired=False, eftype='cohen')
     except Exception:
         cohens_d = float('nan')
 
     print("\n--- Resultado do teste t (bilateral) ---")
-    # imprimir tabela completa do resultado e depois valores formatados
     print(res.to_string(index=False))
     print(f"\nt = {t_stat:.4f}")
     print(f"p-value = {p_val:.4f}")
