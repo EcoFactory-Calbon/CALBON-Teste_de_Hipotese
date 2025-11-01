@@ -210,9 +210,9 @@ if __name__ == "__main__":
 | **T = 0.8674** | diferença entre as médias é pequena em relação à variabilidade. |
 | **dof = 19.765** | graus de liberdade ajustados conforme tamanhos e desvios. |
 | **p-val = 0.3961** | muito acima de 0.05, não há diferença estatística significativa. |
-| **CI95% = [-741.17, 1795.06]** | intervalo de confiança das médias; contém o zero → reforça ausência de diferença. |
+| **CI95% = [-741.17, 1795.06]** | intervalo de confiança das médias; contém o zero, reforça ausência de diferença. |
 | **Cohen’s d = 0.2961** | efeito pequeno (diferença fraca).|
-| **BF10 = 0.408** | fator de Bayes < 1 → dados favorecem H₀. |
+| **BF10 = 0.408** | fator de Bayes < 1, dados favorecem H₀. |
 | **power = 0.1561** | poder estatístico baixo (alta chance de erro tipo II, amostras pequenas). |
 
 >💡 **Nota:** BF₁₀ (Bayes Factor) indica quanto mais os dados apoiam a hipótese alternativa em relação à nula; Power (poder estatístico) é a probabilidade de detectar um efeito real quando ele existe; Erro tipo II (β) é a falha em detectar um efeito real, ou seja, aceitar a hipótese nula quando ela é falsa.
