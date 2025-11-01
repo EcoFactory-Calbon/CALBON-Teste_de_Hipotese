@@ -129,13 +129,13 @@ Se o p-value for menor que o nível de significância adotado (geralmente 0.05),
 
 Com esses valores calculados, o código imprime o resultado formatado.
 Ele mostra o valor de t, o p-value, o Cohen’s d, e interpreta o resultado à luz de um nível de significância de 5% (α = 0.05).
-Se o p-value for menor que 0.05, o código conclui que existe diferença estatisticamente significativa entre os fluxos — ou seja, o tempo médio de um fluxo é diferente do outro com um nível de confiança de 95%.
-Se o p-value for maior que 0.05, o programa entende que não há evidência suficiente para afirmar que os fluxos diferem — e portanto “não rejeita a hipótese nula”.
+Se o p-value for menor que 0.05, o código conclui que existe diferença estatisticamente significativa entre os fluxos, ou seja, o tempo médio de um fluxo é diferente do outro com um nível de confiança de 95%.
+Se o p-value for maior que 0.05, o programa entende que não há evidência suficiente para afirmar que os fluxos diferem, e portanto “não rejeita a hipótese nula”.
 
 No caso da saída apresentada, o teste t retornou um valor t = 0.8674 e p-value = 0.3961, muito acima do limite de 0.05, o que indica que a diferença entre os tempos médios do fluxo A e do fluxo B é compatível com o acaso. O Cohen’s d = 0.2961 reforça essa interpretação: a diferença entre as médias existe, mas é pequena e provavelmente sem relevância prática.
 
 Por fim, a função main() imprime a conclusão de forma interpretável: “Sem evidência estatística suficiente de diferença entre os fluxos (não rejeita H0)”.
-Isso quer dizer que, com base nesses dados e nesse tamanho de amostra, não há motivos para acreditar que o fluxo A seja realmente mais lento ou mais rápido que o fluxo B — a variação observada pode ser apenas fruto do comportamento natural dos usuários.
+Isso quer dizer que, com base nesses dados e nesse tamanho de amostra, não há motivos para acreditar que o fluxo A seja realmente mais lento ou mais rápido que o fluxo B, a variação observada pode ser apenas fruto do comportamento natural dos usuários.
 
 </details>
 
