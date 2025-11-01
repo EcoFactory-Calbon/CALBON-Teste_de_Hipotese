@@ -32,10 +32,12 @@ import pingouin as pg
 ##
 
 - Pegar os dados necessários
+  
+| Variável | Descrição |
 |:-------|:-----------|
-| 🏢 **`BASE_DIR`** | obtém o diretório onde o script está localizado, garantindo que os arquivos sejam buscados no mesmo local do código. |
-| 👨‍💼 **`EXPECTED_SCREENS`** | número esperado de telas (arquivos CSV) por fluxo (tela1.csv até tela5.csv). |
-| 📍 **`COLUMNS_TO_KEEP`** | define as únicas colunas relevantes para a análise — o identificador do testador e o tempo total gasto. |
+| **`BASE_DIR`** | obtém o diretório onde o script está localizado, garantindo que os arquivos sejam buscados no mesmo local do código. |
+| **`EXPECTED_SCREENS`** | número esperado de telas (arquivos CSV) por fluxo (tela1.csv até tela5.csv). |
+| **`COLUMNS_TO_KEEP`** | define as únicas colunas relevantes para a análise — o identificador do testador e o tempo total gasto. |
 
 ```bash
 BASE_DIR = Path(__file__).parent
