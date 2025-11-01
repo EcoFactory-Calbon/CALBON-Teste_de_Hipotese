@@ -16,10 +16,10 @@ O objetivo principal é verificar se há diferença estatisticamente significati
   
 | Import | Descrição |
 |:-------|:-----------|
-| 🏢 **`Path`** | manipula caminhos de arquivos de forma robusta e independente do sistema operacional. |
-| 👨‍💼 **`sys`** | usado para encerrar o programa `(sys.exit(1))` em caso de erro crítico |
-| 📍 **`pandas`** | manipula e agrega dados dos CSVs. |
-| 📍 **`pingouin`** | biblioteca estatística para testes t e outros. |
+| **`Path`** | manipula caminhos de arquivos de forma robusta e independente do sistema operacional. |
+| **`sys`** | usado para encerrar o programa `(sys.exit(1))` em caso de erro crítico |
+| **`pandas`** | manipula e agrega dados dos CSVs. |
+| **`pingouin`** | biblioteca estatística para testes t e outros. |
 
 ```bash
 from pathlib import Path
