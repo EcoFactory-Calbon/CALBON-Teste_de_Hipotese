@@ -217,8 +217,7 @@ if __name__ == "__main__":
 
 >💡 **Nota:** BF₁₀ (Bayes Factor) indica quanto mais os dados apoiam a hipótese alternativa em relação à nula; Power (poder estatístico) é a probabilidade de detectar um efeito real quando ele existe; Erro tipo II (β) é a falha em detectar um efeito real, ou seja, aceitar a hipótese nula quando ela é falsa.
 
-
-```bash
+```
 Estatísticas - Fluxo A (duração total por usuário):
 count       19.000000
 mean       934.043158
